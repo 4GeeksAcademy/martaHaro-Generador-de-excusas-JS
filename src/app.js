@@ -3,8 +3,11 @@ import "./style.css";
 
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
+
 window.onload = function() {
-  //write your code here
+  document.querySelector("#excuse").innerHTML = writeExcuse();
+};
+let writeExcuse = () => {
   let who = ["the bird", "my hamster", "my bike", "a lion"];
   let action = ["ate", "hid", "was", "sat"];
   let what = ["my homework", "the mobile", "on fire", "outside my door"];
@@ -19,12 +22,14 @@ window.onload = function() {
   let actionIndex = Math.floor(Math.random() * action.length);
   let whatIndex = Math.floor(Math.random() * what.length);
   let whenIndex = Math.floor(Math.random() * when.length);
-  document.querySelector("#excuse").innerHTML =
+
+  return (
     who[whoIndex] +
     " " +
     action[actionIndex] +
     " " +
     what[whatIndex] +
     " " +
-    when[whenIndex];
+    when[whenIndex]
+  );
 };
